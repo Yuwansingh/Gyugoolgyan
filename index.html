@@ -44,12 +44,9 @@
   <div id="items" class="grid"></div>
 
   <script>
-    fetch("https://craftland.vercel.app/resource?id=itemData")
+    fetch("https://corsproxy.io/?https://craftland.vercel.app/resource?id=itemData")
       .then(res => res.json())
-      .then(json => {
-        let data = json;
-        if (json.data) data = json.data; // If response has .data key
-
+      .then(data => {
         const container = document.getElementById("items");
 
         if (!Array.isArray(data)) {
